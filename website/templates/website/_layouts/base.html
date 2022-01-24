@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+{% load static %}
+{% load tempo_atual %}
+    <head>
+        <title>
+            {% block title %}Sistema de Gerenciamento de Funcionários {% endblock %}
+        </title>
+
+
+        <!--Estilos-->
+        <link rel="shortcut icon" type="image/png"
+        href="{% static 'website/img/favicon.png' %}">
+        <link rel="stylesheet"
+          href="{% static 'website/css/bootstrap.min.css' %}">
+        <link rel="stylesheet"
+          href="{% static 'website/css/master.css' %}">
+
+            {% block styles %}{% endblock %}
+    </head>
+
+    <body>
+     <nav class="navbar navbar-expand-lg navbar-light bg-light">
+             <a class="navbar-brand" href="{% url 'website:index' %}">
+                <img src="{% static 'website/img/favicon.png' %}" height='45px'>
+             </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse"
+           data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+           aria-expanded="false" aria-label="Ativar navegação">
+             <span class="navbar-toggler-icon"></span>
+          </button>
+
+      <div class="collpase navbar-collapse" id="navbarSuppportedContent">
+          <ul class="navbar-nav mr-auto">
+              <li class="nav-item active">
+                  <a class="nav-link" href="{% url 'website:index' %}">
+                      Página Inicial
+                  </a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link"  href="{% url 'website:lista_funcionarios' %}">Funcionários</a>
+              </li>
+          </ul>
+
+          <ul class="navbar-nav float-right">
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                    <b>Hora: </b>{% tempo_atual %}
+                </a>
+              </li>
+          </ul>
+      </div>
+     </nav>
+
+        {% block conteudo %}{% endblock %}
+
+        <script src="{% static 'website/js/jquery.min.sj' %}"></script>
+        <script src="{% static 'website/js/bootstrap.min.sj' %}"></script>
+
+        {% block scripts %}{% endblock %}
+
+        <script src="{% static 'website/js/scripts.js' %}"></script>
+    </body>
+</html>
