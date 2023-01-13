@@ -6,15 +6,16 @@ Site projetado para cadastro de funcionários para uma empresa.
 
 ## Como executar:
 
- - Clone o repositório
+ - Clone o repositório e entre na pasta.
  
 `$ git clone https://github.com/LucasIdalino/Site-para-Cadastro-de-Funcionarios.git`
 
+`$ cd Site para Cadastro de Funcionários/`
   - Crie um ambiente virtual e ative o
   
 `$ python -m venv venv`
 
-`$ source venv/bin/activate`
+`$ source venv/bin/activate` ou `venv/Scripts/activate`
 
   - No terminal, instale os requerimentos
   
